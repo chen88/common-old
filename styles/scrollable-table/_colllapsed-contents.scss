@@ -1,0 +1,24 @@
+.collapsed-content {
+  .heading {
+    border-bottom: $table-border;
+    & > * {
+      padding: 0 10px;
+      width: 90%;
+      margin: auto;
+      // display: inline-block;
+      text-align: center;
+    }
+  }
+  .content, .content-header {
+    text-align: center;
+    & > * {
+      @include pretty-textoverflow;
+      padding-right: 0;
+    }
+  }
+  .content {
+    & > * {
+
+    }
+  }
+}

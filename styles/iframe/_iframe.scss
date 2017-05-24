@@ -1,0 +1,16 @@
+.tkg-iframe-wrapper {
+
+  .modal-dialog {
+    width: 90%;
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    border: none;
+    min-height: 600px;
+  }
+
+}

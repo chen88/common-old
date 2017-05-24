@@ -1,0 +1,57 @@
+.list-group-item {
+  padding: 2px 10px;
+  clear: both;
+
+  &:hover:not(.no-hover):not(.active):not(.separator) {
+    background-color: $hoverGreen !important;
+  }
+
+  &.active {
+    background-color: #337ab7 !important;
+    border-color: #337ab7 !important;
+    // color: $black;
+  }
+
+  /** add i.fa.fa-check instead */
+  input[type="checkbox"], input[type="radio"] {
+    display: none;
+  }
+  label {
+    margin: 0;
+    display: block;
+    cursor: pointer;
+  }
+  .fa-check {
+    color: $greenSuccess;
+  }
+
+  .label {
+    float: right;
+    margin-right: 10px;
+    font-weight: 400;
+  }
+
+  &:first-child, &:last-child {
+    border-radius: 0;
+  }
+
+  & > table {
+    font-size: inherit;
+    padding: 3px 5px !important;
+    tr {
+      @extend .list-group-item;
+      display: table-row !important;
+      th, td {
+        display: table-cell !important;
+        min-width: initial !important;
+        max-width: initial !important;
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  .list-group-item > * {
+    padding: 3px 0;
+  }
+}

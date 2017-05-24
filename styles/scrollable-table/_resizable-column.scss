@@ -1,0 +1,23 @@
+.col-resizer {
+  height: $scrollable-cell-height;
+  width: $resizerWidth;
+  float: right;
+  display: $ib;
+  margin-right: -10px;
+  cursor: ew-resize;
+  position: absolute;
+}
+
+#col-resizer {
+  position: fixed;
+  display: none;
+  z-index: -1;
+  height: 25px;
+  width: 5px;
+  border-radius: 10px;
+  background-color: $green;
+  &.on {
+    z-index: $resizerIndex;
+    display: inherit;
+  }
+}

@@ -1,0 +1,67 @@
+// * {
+//   -ms-overflow-style: auto;
+// }
+
+// ::-webkit-scrollbar {
+//   width: 10px;
+//   height: 10px;
+//   &:window-inactive {
+//     display: none;
+//   }
+// }
+
+// ::-webkit-scrollbar-button {
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: white;
+//   border: 0px;
+
+// }
+
+// ::-webkit-scrollbar-track-piece {
+
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 10px;
+//   -webkit-border-radius: 10px;
+//   background: mix(slategray, $white, 50%);
+//   &:start {
+//     background: black;
+//   }
+// }
+
+// ::-webkit-scrollbar-corner {
+
+// }
+
+// ::-webkit-resizer { }
+
+
+// // body {
+// //   overflow: scroll;
+// // }
+
+
+// // ::-webkit-scrollbar {
+// //     width: 12px;
+// // }
+
+// // /* Track */
+// // ::-webkit-scrollbar-track {
+// //     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+// //     -webkit-border-radius: 10px;
+// //     border-radius: 10px;
+// // }
+
+// // /* Handle */
+// // ::-webkit-scrollbar-thumb {
+// //     -webkit-border-radius: 10px;
+// //     border-radius: 10px;
+// //     background: rgba(255,0,0,0.8);
+// //     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+// // }
+// // ::-webkit-scrollbar-thumb:window-inactive {
+// //   background: rgba(255,0,0,0.4);
+// // }

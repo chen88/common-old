@@ -1,0 +1,11 @@
+#admin-screen {
+  .fa-check-circle {
+    color: $green;
+  }
+  .fa-times-circle {
+    color: $redColor;
+  }
+}
+
+@import "admin-form";
+@import "admin-emulate";

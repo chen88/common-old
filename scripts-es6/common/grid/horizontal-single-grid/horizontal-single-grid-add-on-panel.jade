@@ -1,0 +1,7 @@
+#primary-body.horizontal-grid-addon(primary-body='')
+  .secondary-body.primary-grid-child
+    .add-on-template(tkg-template-url='addOnTemplate')
+    .horizontal-grid
+      .panel.panel-default.horizontal-grid-panel
+        .panel-body(horizontal-grid-body='')
+          .panel-children(ng-repeat='template in hGridTemplate', tkg-template-url='template', ng-class="'panel-children-' + $index", horizontal-grid-children='')

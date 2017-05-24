@@ -1,0 +1,9 @@
+.chart-border {
+  .highcharts-container {
+    border: 2px solid $chartBorderColor;
+  }
+}
+
+.highchart-wrapper {
+  cursor: pointer;
+}

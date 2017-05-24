@@ -1,0 +1,8 @@
+.tiertary-body.secondary-grid-child.secondary-bottom(ng-if='!gridTemplate.bottomRight', tiertary-body='')
+  tiertary-grid.tiertary-grid(position='left')
+    include ./tiertary-left-grid.tmp.jade
+  resize-bar(position='vertical')
+  tiertary-grid.tiertary-grid(position='right', resize='true')
+    include ./tiertary-right-grid.tmp.jade
+.tiertary-body.secondary-grid-child.secondary-bottom(ng-if='gridTemplate.bottomRight')
+  include ./secondary-bottom-right-grid.tmp.jade

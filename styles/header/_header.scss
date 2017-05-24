@@ -1,0 +1,169 @@
+#tkg-header {
+  height: $headerHeight;
+  background: $green;
+  position: relative;
+  width: 100%;
+  top: 0;
+  display: block;
+  * {
+    font-size: 12px;
+  }
+  form {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: $headerBannerWidth + $rangerBannerPadding;
+
+    &.pull-right {
+      left: inherit;
+      right: 0;
+    }
+    &[name="emulateForm"] {
+      left: inherit;
+      right: 0;
+      .fa {
+        color: white;
+      }
+    }
+  }
+
+  .form-inline {
+    .form-group {
+      label {
+        padding-right: 5px;
+      }
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  label {
+    float: left;
+    color: $lightgrey;
+    padding-right: 8px;
+  }
+
+  tr {
+    background-color: $green;
+  }
+
+  a {
+    color: $lightgrey;
+    cursor: pointer;
+    &:active {
+      color: lighten($lightgrey, 4%)
+    }
+  }
+
+
+  .radio, .checkbox {
+    display: inline-block;
+  }
+
+  button {
+    & + button {
+      margin-left: 5px;
+    }
+  }
+  .fa-toggle-on, .fa-toggle-off {
+    color: $white;
+    font-size: 15px;
+  }
+}
+
+#tkg-banner {
+  $padding: 5px;
+  position: relative;
+  width: $headerBannerWidth;
+  height: 100%;
+  float: left;
+  padding-right: $rangerBannerPadding/2;
+  padding-left: $rangerBannerPadding/2;
+  // margin-right: $rangerBannerPadding/2;
+  // margin-left: $rangerBannerPadding/2;
+  h1, h2, h3, h4, h5 {
+    color: $lightgrey;
+  }
+  h1 {
+    font-size: 50px;
+    margin: 0;
+    // margin-right: 10px;
+    padding: $padding;
+    line-height: $headerHeight - $padding;
+    padding-top: 0;
+  }
+  h5 {
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+  }
+}
+
+.alert-box {
+  z-index: 1000;
+  position: fixed;
+  left: 1%;
+  top: 1%;
+  width: 98%;
+  // opacity: 0.95;
+}
+
+#sticky-header {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: $lightgrey;
+}
+
+#sticky-header-bottom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.responsive-input {
+  input:not([type="radio"]), select {
+    max-width: $responsiveInputMaxWidth !important;
+    min-width: $responsiveInputMinWidth !important;
+    width: $responsiveWidth !important;
+  }
+  select.extend {
+    max-width: inherit !important;
+    min-width: inherit !important;
+    width: inherit !important;
+  }
+}
+
+.dropdown-menu[uib-dropdown-menu] {
+  input:not([type="radio"]):not([type="checkbox"]), select {
+    max-width: inherit !important;
+    min-width: inherit !important;
+    width: inherit !important;
+  }
+
+  &.green-dropdown {
+    min-width: 103px;
+    margin-top: 4px;
+    background: #007203;
+    border-color: $white;
+    & > li > a {
+      padding: 3px 10px;
+      color: $white;
+      &:hover, &:focus {
+        background: $btnHoverGreen;
+      }
+      &:active {
+        background: $btnActiveGreen;
+      }
+    }
+  }
+}
+
+input[type="text"].price-field {
+  width: $responsiveInputMaxWidth/2;
+}
+
+@import "dropdown";
+@import 'typeahead-dropdown';
+@import 'form';

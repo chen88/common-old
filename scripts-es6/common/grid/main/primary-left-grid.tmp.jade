@@ -1,0 +1,10 @@
+.inherit-height(ng-if='gridTemplate.primaryLeftGrid')
+  .primary-grid-child.primary-left(tkg-template-url='gridTemplate.primaryLeftGrid')
+.inherit-height(ng-if='gridTemplate.topLeft')
+  .secondary-body.primary-grid-child.primary-left(secondary-body='')
+    div
+      secondary-grid.secondary-grid(position='top', height='50%', resize='true')
+        include ./secondary-top-left-grid.tmp.jade
+      resize-bar(position='horizontal')
+      secondary-grid.secondary-grid(position='bottom', height='50%')
+        include ./secondary-bottom-left-grid.tmp.jade

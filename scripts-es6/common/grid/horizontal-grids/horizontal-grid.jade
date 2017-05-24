@@ -1,0 +1,10 @@
+- var vm = "hGridCtrl";
+.horizontal-grid
+  .panel.panel-default.horizontal-grid-panel.border-none(ng-class="{'two-children': #{vm}.children.length === 2}")
+    .panel-body
+      .panel-children.h-grid-children(
+        ng-repeat="t in ::#{vm}.templates"
+        tkg-template-url="t.template || t"
+        h-grid-children
+        ng-class="::('panel-children-' + $index)")
+        grid-horizontal-resizer(ng-if="::(!$first && !#{vm}.disableResizer)" ng-hide="t.width === 0")

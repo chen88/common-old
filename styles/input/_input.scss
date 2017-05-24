@@ -1,0 +1,46 @@
+select.form-control {
+  height: 20px;
+  background-color: $lightgrey;
+  color: $black;
+  // width: 100px;
+  margin-right: 5px;
+  padding: 0; //firefox needs this for some reason;
+}
+input[type="radio"] {
+  margin-right: 5px;
+}
+.error {
+  border: 2px solid $blueErrorColor;
+  box-shadow: 1px 1px 2px 2px $blueErrorColor;
+  background-color: lighten($blueErrorColor, 30%) !important;
+  color: white !important;
+
+  & + .input-group-addon {
+    @extend .error;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+}
+select {
+  color: $black !important;
+}
+
+.pretty-inputs {
+  input[type="text"] {
+    border-radius: 0;
+    border: 1px solid $green;
+    background: transparent;
+  }
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $hoverGreen;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    // color: $lighterHoverGreen;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    // color: $lighterHoverGreen;
+  }
+}
+
+@import './datepicker';

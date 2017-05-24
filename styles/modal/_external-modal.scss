@@ -1,0 +1,73 @@
+.tkg-modal-external {
+  .modal-dialog {
+    width: $externalModalWidth;
+    margin: 0px;
+    margin-top: 10px;
+    margin-left: (100% - $externalModalWidth)/2;
+
+    .modal-content {
+      width: 100%;
+      // border: none;
+      tr{
+        @if variable-exists(modalRowHeight) {
+          height: initial;
+        }
+
+        @for $i from 1 through 6 {
+          td:nth-child(#{$i}) {
+            max-width: initial;
+            min-width: initial;
+            & > * {
+              max-width: initial;
+              min-width: initial;
+            }
+          }
+        }
+        button.btn.btn-primary.dropdown-toggle {
+          width: 100px;
+        }
+      }
+
+      #primary-body {
+        // border: 1px solid $poop;
+        // border-radius: $borderRadius;
+        background-color: inherit;
+      }
+
+      .primary-grid-child {
+        padding: 10px 0;
+      }
+
+    }
+
+    .modal-header, .modal-footer {
+      height: 30px;
+      padding: 5px 10px;
+      border: none;
+    }
+
+    .modal-header {
+      .fa-times {
+        padding: 5px 3px;
+        font-size: 20px;
+      }
+    }
+
+    .modal-footer {
+      padding-top: 2px;
+      & > * {
+        margin-top: -3px;
+      }
+    }
+
+    .modal-body {
+      color: black;
+      padding: 0;
+    }
+
+    #tkg-header {
+      display: none;
+    }
+  }
+}
+

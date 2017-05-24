@@ -1,0 +1,19 @@
+.tiertary-grid {
+  position: absolute;
+  height: 100%;
+}
+
+.tiertary-grid-child {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // padding: $borderWidth;
+
+  &.tiertary-left {
+    padding-right: $borderWidth/2 - 1;
+  }
+
+  &.tiertary-right {
+    padding-left: $borderWidth/2 - 1;
+  }
+}

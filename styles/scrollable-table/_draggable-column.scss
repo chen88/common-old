@@ -1,0 +1,54 @@
+@mixin blink-border ($colorStart: $tabble-border-color, $colorStop: darken($table-border-color, 10%), $width: 1px, $side : all) {
+  @if $side == all {
+    from {border: $width solid $colorStart;}
+    to {border: $width solid $colorStop;}
+  } @else {
+    from {border-#{$side}: $width solid $colorStart;}
+    to {border-#{$side}: $width solid $colorStop;}
+  }
+}
+@keyframes blinkBorderLeft {
+  @include blink-border($table-border-color, darken($table-border-color, 30%), 10px, left);
+}
+@-webkit-keyframes blinkBorderLeft {
+  @include blink-border($table-border-color, darken($table-border-color, 30%), 10px, left);
+}
+.dragging .scrollable-table {
+  th {
+    cursor: move;
+  }
+  th.hover {
+    -webkit-animation: blinkBorderLeft 1s infinite;
+    animation: blinkBorderLeft 1s infinite;
+  }
+}
+
+.dragging-element {
+  position: fixed;
+  opacity: 0.7;
+  border: 2px dotted darken($table-border-color, 10%);
+  font-size: 12px;
+  cursor: move;
+  @include no-select;
+  @include pretty-textoverflow;
+}
+
+@mixin blink-background ($colorStart: $tabble-border-color, $colorStop: darken($table-border-color, 10%)) {
+  from {background-color: $colorStart;}
+  to {background-color: $colorStop;}
+}
+@keyframes blinkBackgroundLeft {
+  @include blink-background($table-border-color, darken($table-border-color, 30%));
+}
+@-webkit-keyframes blinkBackgroundLeft {
+  @include blink-background($table-border-color, darken($table-border-color, 30%));
+}
+
+#col-swapper {
+  @extend #col-resizer;
+  background-color: $lightgrey;
+  &.on {
+    -webkit-animation: blinkBackgroundLeft 1s infinite;
+    animation: blinkBackgroundLeft 1s infinite;
+  }
+}

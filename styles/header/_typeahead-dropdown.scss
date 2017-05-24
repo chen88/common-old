@@ -1,0 +1,116 @@
+@mixin hint-list-anchor {
+  padding: 0 5px;
+  border-radius: 4px;
+  color: black !important;
+  line-height: 20px;
+}
+// #tkg-header {
+  .dropdown-menu[uib-typeahead-popup], .uib-dropdown-menu[uib-typeahead-popup], .uib-dropdown-menu.hint-list, .hint-list[uib-dropdown-menu] {
+    top: 19px;
+    padding: 5px;
+    & > li {
+      @include dropdown-li;
+      margin: 0;
+      &.inactive {
+        opacity: 0.6;
+      }
+      & > a, &.list-group-item > label {
+        @include hint-list-anchor;
+      }
+    }
+    & > .active > a {
+      background-color: $selectGreen;
+      border: 1px solid $selectGreen;
+    }
+  }
+// }
+
+.hint-list[uib-dropdown-menu] {
+  &.with-label {
+    left: 40px;
+  }
+  // a {
+  //   line-height: 20px;
+  // }
+  a:hover, .list-group-item label:hover {
+    background-color: $hoverGreen;
+    border: 1px solid $hoverGreen;
+  }
+  a:active, .list-group-item label:active {
+    background-color: $selectGreen;
+    border: 1px solid $selectGreen;
+  }
+
+  .no-hover, .separator {
+    a:hover, .list-group-item label:hover, a:active, .list-group-item label:active {
+      background-color: inherit;
+      border: inherit;
+    }
+  }
+  .separator {
+    height: 10px;
+  }
+}
+
+.dropdown-menu.hint-list {
+  .dropdown-menu {
+    position: relative;
+    display: block;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    min-width: inherit;
+    width: inherit;
+    li > a {
+      @include hint-list-anchor;
+    }
+  }
+  &.green {
+    background-color: lighten($green, 5%);
+    li {
+      a {
+        color: white !important;
+        border: none;
+        border-radius: 0;
+        &:hover {
+          background-color: lighten($green, 8%);
+
+        }
+      }
+    }
+  }
+  &.poop {
+    background-color: lighten($poop, 5%);
+    color: $darkGrey;
+    border-color: white;
+    li {
+      a {
+        color: $darkGrey !important;
+        &:hover {
+          background-color: lighten($poop, 8%);
+        }
+      }
+    }
+  }
+  &.action {
+    background-color: $darkRed;
+    // background-color: lighten($darkRed, 5%);
+    li {
+      a {
+        color: white !important;
+        border: none;
+        border-radius: 0;
+        &:hover {
+          background-color: lighten($darkRed, 8%);
+
+        }
+      }
+    }
+  }
+  &.no-padding {
+    margin-top: 0;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+  }
+}

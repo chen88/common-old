@@ -1,0 +1,179 @@
+
+.td-label {
+  color: $lightgrey;
+  text-align: right;
+}
+
+.black-label {
+  .td-label {
+    color: $black;
+  }
+}
+
+.right-label {
+  .td-label {
+    text-align: right;
+    padding: 0;
+  }
+}
+
+.strong-label {
+  .td-label {
+    font-weight: bold;
+  }
+}
+
+.label-spacing {
+  .td-label:not(:first-child) {
+    &:before {
+      content: "";
+      margin-left: 10px;
+    }
+  }
+}
+
+table {
+  font-size: 12px;
+  border: none !important;
+  &.highlight-row{
+    tbody{
+      tr:hover, tr:nth-child(odd):hover, tr:nth-child(even):hover,
+      tr.hover, tr:nth-child(odd).hover, tr:nth-child(even).hover {
+        background-color: $hoverGreen;
+        &.notify-bg, &.hover-green {
+          transition: none;
+          background-color: $hoverGreen !important;
+        }
+        .sm-spinner {
+          background: url('../assets/images/small_spinner_hover.gif');
+        }
+      }
+      tr:active, tr:nth-child(odd):active, tr:nth-child(even):active,
+      tr.selected, tr:nth-child(odd).selected, tr:nth-child(even).selected {
+        background-color: $selectGreen;
+        &.notify-bg, &.hover-green {
+          background-color: $selectGreen !important;
+        }
+
+        .sm-spinner {
+          background: url('../assets/images/small_spinner_selected.gif');
+        }
+      }
+    }
+  }
+}
+
+.hover-green {
+  tbody {
+    tr:hover, tr:nth-child(odd):hover, tr:nth-child(even):hover,
+    tr.hover, tr:nth-child(odd).hover, tr:nth-child(even).hover {
+      background-color: $hoverGreen !important;
+      & td {
+        background-color: $hoverGreen !important;
+      }
+    }
+    tr:active, tr:nth-child(odd):active, tr:nth-child(even):active,
+    tr.selected, tr:nth-child(odd).selected, tr:nth-child(even).selected {
+      background-color: $selectGreen;
+      & td {
+        background-color: $hoverGreen !important;
+      }
+    }
+  }
+}
+
+.table-unwrap {
+  td {
+    white-space: normal !important;
+  }
+}
+
+.table-bordered {
+  border: $table-border;
+  margin-bottom: 0;
+  & > thead > tr > th, & > thead > tr > td {
+    border-bottom-width: 1px;
+  }
+  &.table-bordered-important {
+    border: $table-border !important;
+  }
+}
+
+.borderless-bottom {
+  tbody {
+    tr:last-child {
+      border-bottom: none;
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.td-shaded {
+  background-color: #e5e5e5;
+}
+
+th:last-child, td:last-child {
+  border-right: none !important;
+}
+
+th:first-child, td:first-child {
+  border-left: none !important;
+}
+
+td, th {
+  padding: $cellPadding;
+}
+
+// thead {
+//   @include linear-grad(lighten($lightgrey, 20%), darken($lightgrey, 0%));
+// }
+
+.stripe:not(.no-stripe) tbody tr:nth-child(odd) {
+  background-color: inherit; //white
+  & .collapsed-content {
+    background-color: white;
+  }
+
+  &.notify-bg {
+    background-color: $lighterBlue !important;
+  }
+  &.blue-bg {
+    background-color: $lightBlue;
+  }
+  &.darker-blue-bg {
+    background-color: $darkerBlue;
+  }
+}
+
+.stripe:not(.no-stripe) tbody tr:nth-child(even) {
+  background-color: $lightPoop;
+
+  & .collapsed-content {
+    background-color: $lightPoop;
+  }
+  &.blue-bg {
+    background-color: $lightBlue;
+  }
+}
+
+.no-stripe tbody tr {
+  background-color: white !important;
+}
+
+table.clean {
+  tr {
+    background-color: white !important;
+  }
+}
+
+table.border-right {
+  border-right: $table-border !important;
+}
+
+table.border-left {
+  border-left: $table-border !important;
+}
+
+@import 'table-head';

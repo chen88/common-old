@@ -1,0 +1,27 @@
+- var vm = "loginCtrl";
+#login
+  #tkg-header
+    #tkg-banner
+      h1.text-muted TKG
+
+  #primary-body
+    .panel.panel-default
+      .panel-heading
+        .panel-title
+          | Log In
+      .panel-body
+        form(name="loginForm", novalidate, ng-submit="#{vm}.login()")
+          .form-group
+            label.sr-only(for="username") User name
+            input#username.form-control(type="text", name="username", ng-model="#{vm}.user.username", placeholder="User name", required)
+          .form-group
+            label.sr-only(for="password") Password
+            input#password.form-control(type="password", name="password", ng-model="#{vm}.user.password", placeholder="Password", required)
+          button.btn.btn-block.btn-default(type="submit", ng-disabled="#{vm}.loggingIn || loginForm.$invalid") Login
+    .alert-wrapper
+      div
+        .has-success.alert.alert-success(ng-show="#{vm}.success")
+          | Login sucessful. Welcome {{#{vm}.nickName}}
+      div
+        .has-error.alert.alert-danger(ng-show="#{vm}.error")
+          | Invalid user name or password

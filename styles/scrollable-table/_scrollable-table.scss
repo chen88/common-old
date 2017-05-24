@@ -1,0 +1,133 @@
+$scrollableHeaderHeight: 25px;
+
+body.dragging {
+  cursor: move !important;
+}
+
+.scrollable-table {
+  border: none;
+  & > thead, & > tbody {
+    position: absolute;
+  }
+  & > thead {
+    height: $scrollableHeaderHeight;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 2;
+    border-bottom: none;
+    tr {
+      display: block;
+    }
+  }
+  & > tbody {
+    overflow: auto;
+    border-top: none;
+    margin-top: $scrollableHeaderHeight - 1;
+  }
+  tr {
+    height: $scrollable-cell-height + 2px * 2 + 1px;
+    position: relative;
+  }
+  td, th {
+    padding: 2px 5px !important;
+    line-height: 1.9 !important;
+    @include pretty-textoverflow;
+    & > div:first-child {
+      @include pretty-textoverflow;
+      height: $scrollable-cell-height;
+      float: left;
+      display: $ib;
+      position: relative;
+      // z-index: 2;
+    }
+  }
+
+  th {
+    cursor: pointer;
+    @include no-select;
+  }
+
+  .collapsed-content {
+    // display: none;
+    height: 0;
+    opacity: 0;
+    // height: $scrollable-collapsed-height:
+    position: absolute;
+    width: 100%;
+    margin-left: -5px;
+    border-top: $table-border;
+    margin-top: $scrollable-cell-height + 2px;
+    // transition: height 0.5s ease;
+    .inner-content {
+      height: $scrollable-collpased-final-height;
+      overflow-y: auto;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+          display: none;
+      }
+    }
+  }
+
+  tr.show-content {
+    height: $scrollable-cell-height + 5px + 3px + $scrollable-collpased-final-height;
+    @for $i from 2 through 10 {
+      // &.show-content-length-#{$i} {
+      //   height: $scrollable-cell-height + 5px + 3px + $scollable-collapsed-add-height + ($scrollable-collapsed-height * $i);
+      //   .collapsed-content {
+      //     height: $scollable-collapsed-add-height + ($scrollable-collapsed-height * $i);
+      //     .inner-content {
+      //       height: $scollable-collapsed-add-height + ($scrollable-collapsed-height * $i);
+      //     }
+      //   }
+      // }
+    }
+    .collapsed-content {
+      display: block;
+      height: $scrollable-collpased-final-height;
+      margin-top: $scrollable-cell-height + 5px;
+      opacity: 1;
+      // transition: opacity 0s ease 0.4s;
+    }
+  }
+
+  .col-remover {
+    @extend .glyphicon;
+    @extend .glyphicon-remove-circle;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    display: none;
+  }
+
+  .select-all-row {
+    width: 100%;
+    display: block;
+    background: white !important;
+    & > td {
+      text-align: center;
+      display: block;
+      width: 100% !important;
+      & > div {
+        width: 100% !important;
+      }
+    }
+  }
+}
+body:not(.dragging):not(.resizing) {
+  th:hover {
+    .col-remover {
+      display: inherit;
+    }
+  }
+}
+
+body.resizing.ew {
+  th {
+    cursor: ew-resize !important;
+  }
+}
+
+@import 'resizable-column';
+@import 'draggable-column';
+@import 'colllapsed-contents';
+@import 'scrollable-inner-table';

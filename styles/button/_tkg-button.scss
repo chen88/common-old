@@ -1,0 +1,198 @@
+.btn:not([tabindex]), input[type='button'] {
+  outline: 0 !important;
+  line-height: 15px;
+  font-size: 12px;
+  .glyphicon {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+  }
+}
+.btn.btn-primary {
+  border-color: white;
+  padding: $cellPadding;
+  color: $lightgrey;
+  height: 21px;
+  line-height: 15px;
+  background-color: darken($lightgrey, 30%);
+  &, &:focus {
+    background-color: darken($lightgrey, 25%);
+  }
+  &:hover {
+    background-color: darken($lightgrey, 22%);
+  }
+  &:active, &.active {
+    border-color: white;
+    background-color: darken($lightgrey, 18%);
+    // border-color: transparent !important;
+  }
+  &.inactive {
+    opacity: 0.6;
+  }
+}
+
+.btn.btn-poop {
+  border-color: white;
+  padding: $cellPadding;
+  color: $darkGrey;
+  height: 21px;
+  line-height: 15px;
+  &, &:focus {
+    background-color: lighten($poop, 5%);
+  }
+  &:hover {
+    background-color: lighten($poop, 8%);
+  }
+  &:active, &.active{
+    border-color: white;
+    background-color: lighten($poop, 12%);
+  }
+  &.inactive {
+    opacity: 0.6;
+  }
+  &.wide {
+    padding: 2px 10px !important;
+  }
+  &.selected {
+    background-color: $darkPoop;
+  }
+  .badge {
+    background-color: lighten($green, 5%);
+    color: $lightgrey;
+  }
+  
+}
+
+@mixin defaultBtn ($color: darken($btnGreen, 5%)) {
+  border-color: white;
+  padding: $cellPadding;
+  color: $lightgrey;
+  height: 21px;
+  line-height: 15px;
+  & > span.pull-left {
+    line-height: 15px;
+  }
+  &, &:focus {
+    background-color: lighten($color, 5%);
+    // background-color: $color;
+    color: $lightgrey;
+    border-color: white;
+  }
+  &:hover {
+    background-color: lighten($color, 8%);
+    color: $lightgrey;
+    border-color: white;
+  }
+  &:active, &:active:focus, &.active {
+    background-color: lighten($color, 12%);
+    color: $lightgrey;
+    border-color: white;
+  }
+  &.wide {
+    padding: 2px 10px !important;
+  }
+  &.inactive {
+    opacity: 0.6;
+  }
+  &.brighter {
+    &, &:focus {
+      background-color: lighten($color, 5%);
+    }
+    &:hover {
+      background-color: lighten($color, 8%);
+    }
+    &:active, &:active:focus, &.active {
+      background-color: lighten($color, 12%);
+    }
+  }
+}
+.btn.btn-default {
+  @include defaultBtn;
+}
+.btn.btn-action {
+  @include defaultBtn(darken($darkRed, 5%));
+}
+
+
+.open > .btn-default.dropdown-toggle {
+  @include defaultBtn;
+}
+
+.btn.not-ready {
+  height: 25px !important;
+}
+
+button, .btn, .btn-plain {
+  padding: $cellPadding;
+  &:active, &:hover, &:focus, &:visited {
+    outline: 0
+  }
+  &.white-text {
+    color: $white;
+    &:active, &:hover, &:focus, &:visited {
+      color: $white;
+    }
+  }
+}
+
+.btn {
+  white-space: normal;
+  position: relative;
+  .fa-caret-down, .fa-caret-up {
+    // position: absolute;
+    margin-right: 5px;
+    margin-top: 3px;
+    float: right;
+    // margin: 0;
+    font-size: 12px;
+    line-height: 9px;
+  }
+  .badge {
+    float: left;
+    margin-right: 8px;
+    margin-top: 2px;
+    font-size: 9px;
+    padding: 0px 5px;
+    font-weight: normal;
+    background: $hoverGreen !important;
+    color: $darkGrey !important;
+    &.right {
+      margin-top: 0;
+      margin-left: 5px;
+      margin-right: 0;
+      float: none !important;
+      font-size: 12px;
+    }
+  }
+}
+
+.btn-plain, button.btn-plain{
+  text-align: left;
+  background: initial;
+  border: none;
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.btn-bordered {
+  // text-align: left;
+  background: initial;
+  border: 1px solid $green;
+  // border-radius: $borderRadius;
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.upload-btn {
+  // @extend .btn-default;
+  .btn {
+    display: none;
+  }
+}
+
+[role="button"] {
+  cursor: default;
+}

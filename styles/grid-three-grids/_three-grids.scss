@@ -1,0 +1,9 @@
+.three-grids {
+  .tiertary-grid {
+    height: 100% !important;
+    padding-top: $borderWidth/2 - 1;
+    &:last-child {
+      padding-left: $borderWidth/2 - 1;
+    }
+  }
+}

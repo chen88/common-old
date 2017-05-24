@@ -1,0 +1,84 @@
+.admin-form {
+  padding: 10px;
+  .form-horizontal {
+    .form-group {
+      margin: 0;
+      margin-bottom: 15px;
+      width: 270px;
+      float: left;
+      // min-width: 270px;
+    }
+    label {
+      float: left;
+      width: 100px;
+      text-align: right;
+      margin-right: 10px;
+      &.checkbox-label {
+        // width: 32%;
+        min-width: 145px;
+        text-align: left;
+      }
+    }
+    .row {
+      label:last-child {
+        margin-right: 0;
+        text-align: left;
+      }
+    }
+    input:not([type="checkbox"]):not([type="radio"]) {
+      max-width: 150px;
+      width: 100%;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+  }
+
+  .role-section {
+    margin-top: 100px;
+    .radio-wrapper {
+      label {
+        float: none;
+      }
+      input[type="radio"]:not(:first-child) {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .role-title {
+    margin-left: 135px;
+    & > span {
+      display: inline-block;
+      width: 30px;
+      overflow: visible;
+      white-space: nowrap;
+      margin-left: 2px;
+    }
+    b {
+      transform: rotate(-50deg);
+      transform-origin: left bottom;
+      display: inline-block;
+      // text-align: vertical;
+    }
+  }
+  .well {
+    background: transparent;
+    padding: 10px;
+    hr {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#admin-screen {
+  .single-grid {
+    .single-grid-children:first-child {
+      height: 300px;
+    }
+  }
+  .fa-circle {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,65 @@
+// Show when screen is >= 1080
+$hd: 1080px;
+@include maxWidth($hd) {
+  .visible-hd-block {
+    display: block;
+  }
+  .visible-hd-inline {
+    display: inline;
+  }
+  .visible-hd-inline-block {
+    display: inline-block;
+  }
+}
+
+@include minWidth($hd) {
+  .visible-hd-block {
+    display: none;
+  }
+  .visible-hd-inline {
+    display: none;
+  }
+  .visible-hd-inline-block {
+    display: none;
+  }
+}
+
+// Hide when screen is >= 1080
+@include maxWidth($hd) {
+  .hidden-hd {
+    display: none;
+  }
+}
+
+$uxga: 1200px;
+@include maxWidth($uxga) {
+  .visible-uxga-block {
+    display: block;
+  }
+  .visible-uxga-inline {
+    display: inline;
+  }
+  .visible-uxga-inline-block {
+    display: inline-block;
+  }
+}
+
+@include minWidth($uxga) {
+  .visible-uxga-block {
+    display: none;
+  }
+  .visible-uxga-inline {
+    display: none;
+  }
+  .visible-uxga-inline-block {
+    display: none;
+  }
+}
+
+// Hide when screen is >= 1080
+@include maxWidth($uxga) {
+  .hidden-uxga {
+    display: none;
+  }
+}
+

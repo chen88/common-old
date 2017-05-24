@@ -1,0 +1,118 @@
+.panel {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.panel-border-none {
+  .panel {
+    border: none !important;
+  }
+}
+
+.panel-body {
+  padding: 0;
+  position: relative;
+}
+
+.panel-heading {
+  padding: 8px 10px;
+  height: $panelHeading;
+  line-height: 20px;
+  strong {
+    font-size: 14px;
+  }
+  .fa-label {
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    span {
+      position: absolute;
+      margin-top: -1px;
+    }
+  }
+  .glyphicon, .fa {
+    font-size: 16px;
+    margin-right: 10px;
+    position: relative;
+    margin-top: 3px;
+  }
+  button {
+    .glyphicon, .fa:not(.fa-caret-down) {
+      margin-top: 0;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+    .fa-arrow-circle-o-left {
+      margin-top: 2px !important;
+    }
+  }
+  .fa-chevron-up, .fa-chevron-down {
+    // top: 2px;
+    float: right;
+  }
+  .fa-plus, .fa-minus {
+    top: 1px;
+    float: right;
+  }
+  .sm-hourglass {
+    margin-top: 2px;
+    position: absolute;
+  }
+  *:not(strong) {
+    font-size: 12px;
+  }
+  .tkg-nav {
+    display: block;
+    float: left;
+    margin: 0 18px;
+    line-height: 15px;
+  }
+  // .glyphicon, .fa {
+  //   margin-right: 10px;
+  // }
+
+  button > .glyphicon {
+    margin-right: 0;
+  }
+  form {
+    display: inline;
+  }
+
+  input {
+    margin-top: 0;
+  }
+
+  a {
+    color: $link-color;
+  }
+}
+
+.panel.max {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  // &.half {
+  //   height: 50%;
+  // }
+}
+
+.panel.half {
+  height: 50%;
+}
+
+.half-height {
+  height: 50%;
+}
+
+.panel-gadgets > * {
+  margin-left: 10px;
+}
+
+.panel-title {
+  label {
+    input[type="radio"], input[type="checkbox"] {
+      margin: 0 5px;
+    }
+  }
+}
+

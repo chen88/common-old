@@ -1,0 +1,7 @@
+.modal-header(ng-class="{'bright-red-text': msgCtrl.type === 'danger', 'yellow-text': msgCtrl.type === 'warning', 'default-blue-text': msgCtrl.type === 'info'}")
+  i.fa.fa-warning
+  span.left-spacing-xs {{msgCtrl.heading}}
+.modal-body
+  div {{msgCtrl.msg}}
+.modal-footer
+  button.btn.btn-default(type="button" ng-click="$dismiss()") Close

@@ -1,0 +1,10 @@
+.modal-header
+  .modal-title
+    h4
+      i.fa.fa-warning.right-spacing.yellow-text
+      | {{vm.msg || 'Confirm'}}
+.modal-body
+  div {{vm.body || 'Are you sure you want to perform this action?'}}
+.modal-footer
+  button.btn.btn-poop(ng-click="$dismiss()") Cancel
+  button.btn.btn-default(ng-click="$close()") Confirm

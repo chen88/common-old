@@ -1,0 +1,35 @@
+#trade-analysis {
+  padding: 10px;
+  font-size: 12px;
+  padding-top: 0;
+  .row {
+    min-width: 260px;
+
+    .exceptionName {
+      text-align: right;
+      width: 60px;
+      float: left;
+    }
+    .exceptionValue {
+      width: 200px;
+    }
+  }
+
+  .check-result {
+    &:after {
+      content: "";
+      height: 0px;
+      clear: both;
+      display: block;
+    }
+  }
+
+  table {
+    tr {
+      td {
+        max-width: 100px;
+        @include pretty-textoverflow;
+      }
+    }
+  }
+}

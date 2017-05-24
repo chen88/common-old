@@ -1,0 +1,21 @@
+#tkg-maximized {
+  position: fixed;
+  display: none;
+  padding: $borderWidth;
+  background-color: $poop;
+  width: 100%;
+  left: 0;
+  z-index: $maximizedIndex;
+  &.tkg-maxed {
+    display: block;
+  }
+}
+
+#tkg-maximized-content {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: block;
+  border: 1px solid $poop;
+  border-radius: $borderRadius;
+}

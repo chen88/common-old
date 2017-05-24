@@ -1,0 +1,5 @@
+#sticky-header(tkg-header-user ng-show="user")
+  block before
+  strong {{getUserName()}} |
+  a.left-spacing-xs(ng-click="logout()") Logout
+  block after

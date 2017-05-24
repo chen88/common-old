@@ -1,0 +1,21 @@
+.primary-grid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.primary-grid-child {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: $borderWidth;
+
+  &.primary-left {
+    padding-right: $borderWidth/2 - 1;
+  }
+
+  &.primary-right {
+    padding-left: $borderWidth/2 - 1;
+  }
+}

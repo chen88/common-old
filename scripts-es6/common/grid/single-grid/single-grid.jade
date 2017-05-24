@@ -1,0 +1,11 @@
+#primary-body(primary-body)
+  .secondary-body.primary-grid-child
+    .single-grid
+      .panel.panel-default.single-grid-panel
+        .panel-body(style="height:100%")
+          .panel-children.single-grid-children(
+            ng-repeat="template in ::gridTemplate"
+            tkg-template-url="template.template || template"
+            ng-class="{maximized: singleGridChildren.maximized}"
+            height="{{::template.height}}"
+            single-grid-children)

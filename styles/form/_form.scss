@@ -1,0 +1,119 @@
+select {
+  @include pretty-textoverflow;
+}
+
+form {
+  label {
+    font-weight: normal;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:not([type="checkbox"]):not([type="radio"]), textarea {
+  width: 100px;
+  vertical-align: middle;
+  padding: $cellPadding;
+  margin-right: 5px;
+  float: left;
+  font-size: 12px;
+  resize: none;
+
+  &.xs {
+    max-width: 35px;
+    width: 100%;
+  }
+
+  &.sm {
+    max-width: 50px;
+    width: 100%;
+  }
+  &.md {
+    max-width: 75px;
+    width: 100%;
+  }
+  &.lg {
+    max-width: 125px;
+    width: 100%;
+  }
+}
+
+input:not([type="checkbox"]):not([type="radio"]) {
+  height: 21px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.with-add-on {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  input[type="text"] {
+    padding-right: 25px !important;
+  }
+  & > .fa , & > .glyphicon {
+    position: absolute;
+        right: 2px;
+    line-height: 17px;
+    // width: 18px;
+    right: 3px;
+    height: 19px;
+    width: 18px;
+    top: 2px;
+    padding: 0;
+    border: none;
+  }
+  .fa-times {
+    color: grey;
+  }
+}
+
+/* Deprecated: Do not use, use with-add-on instead */
+.input-group-addon {
+    position: absolute;
+    right: 6px;
+    height: 19px;
+    width: 18px;
+    top: 1px;
+    padding: 0;
+    border: none;
+    &.left {
+      left: 1px;
+      & + input[type="text"] {
+        padding: $cellPadding;
+        padding-left: 20px !important;
+      }
+    }
+    .glyphicon, .fa {
+      right: 2px;
+      line-height: 17px;
+      width: 18px;
+      &.fa-th-list {
+        margin-top: 2px;
+        margin-left: -5px;
+      }
+    }
+
+  }
+
+input:not([type='button']), textarea, textarea.form-control {
+  background-color: $lighterGrey;
+}
+
+.scrollable-table {
+input:not([type="checkbox"]):not([type="radio"]) {
+  height: 20px;
+  line-height: 17px;
+  text-align: center;
+}
+}

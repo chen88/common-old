@@ -1,0 +1,30 @@
+{
+  "plugins": [],
+  "globals": {
+    "window": false,
+    "navigator": false,
+    "escape": false,
+    "unescape": false,
+    "location": false,
+    "tkgConst": false,
+    "tkgFilter": false,
+    "tkgHelper": false,
+    "angular": false,
+    "inject": false,
+    "module": false,
+    "$": false,
+    "_": false,
+    "console": false,
+    "moment": false,
+    "Highcharts": false,
+    "angularFilters": false,
+    "injector": false,
+    "angularServices": false,
+    "a": false
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "no-unused-vars": 0,
+    "no-console": 0
+  }
+}

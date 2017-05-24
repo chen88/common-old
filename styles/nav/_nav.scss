@@ -1,0 +1,76 @@
+.nav-tabs {
+  border-color: $green;
+  font-size: 12px;
+}
+.nav > li > a {
+  padding: 2px 5px;
+  border-color: $inactiveGreen;
+  background: $inactiveGreen;
+  color: $lightgrey !important;
+  &:active, &:hover, &:focus {
+    border-color: $inactiveGreen;
+    background: $inactiveGreen;
+    color: $lightgrey !important;
+  }
+}
+.nav > li.active > a {
+  border-color: $green;
+  background: $green;
+  border-bottom-color: transparent;
+  &:active, &:hover, &:focus {
+    border-color: $green;
+    background: $green;
+    border-bottom-color: transparent;
+  }
+}
+.no-radius {
+  a.nav-link {
+    border: none;
+    border-radius: 0 !important;
+  }
+}
+
+.pretty-nav {
+  .nav-tabs {
+    border-color: $lightgrey;
+  }
+  .nav > li > a {
+    padding: 5px 10px;
+    border-color: $lightgrey;
+    background: $grey;
+    color: $black !important;
+     &:hover {
+      border-color: $lightBlue;
+      background: $lightBlue;
+      color: $black !important;
+    }
+    &:active, &:focus {
+      border-color: $lightgrey;
+      background: $white;
+    }
+  }
+  .nav > li.active > a {
+    border-color: $lightBlue;
+    background: $lightBlue;
+     &:hover {
+      border-color: $lighterBlue;
+      background: $lighterBlue;
+      border-bottom-color: $lightgrey;
+      color: $black !important;
+    }
+    &:active, &:focus {
+      border-color: $lightBlue;
+      background: $lightBlue;
+      border-bottom-color: $lightgrey;
+    }
+  }
+}
+
+.panel-title {
+  .pretty-nav {
+    margin-top: -2px;
+    .nav > li > a {
+      padding: 4px 5px;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.cusip-panel {
+  padding: 10px;
+}
+
+.cusip-detail-panel {
+  padding: 0;
+  .row {
+    min-width: 260px;
+  }
+  table {
+    tr {
+      td {
+        max-width: 100px;
+        @include pretty-textoverflow;
+      }
+    }
+  }
+  .cusip-info-table {
+    tbody {
+      tr:last-child {
+        border-bottom: $table-border;
+      }
+    }
+    tr {
+      td:first-child {
+        width: 82px;
+      }
+      td:nth-child(3) {
+        width: 95px;
+      }
+    }
+  }
+  .cusip-security-table {
+    tr {
+      td:first-child {
+        $width: 103px;
+        width: $width;
+        max-width: $width;
+        & > * {
+          width: $width - $borderWidth * 2;
+          display: inline-block;
+        }
+      }
+      td {
+        white-space: normal;
+      }
+    }
+    .call-data-table {
+      tr {
+        td:first-child {
+          width: 70px;
+        }
+      }
+    }
+  }
+  // .security-body {
+  //   & > tr {
+  //     & > td:first-child {
+  //       max-width: 120px;
+  //     }
+  //     & > td:not(:first-child) {
+  //       min-width: 200px;
+  //       max-width: 200px;
+  //       white-space: normal;
+  //     }
+  //   }
+  // }
+}
+
+#cusip-detail-popup {
+  #tkg-header {
+    form {
+      padding: 5px;
+    }
+  }
+}
+
+@import "trade-analysis";
+@import "cusip-chart";

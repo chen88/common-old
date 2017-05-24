@@ -1,0 +1,5 @@
+.secondary-body.primary-grid-child.primary-right(secondary-body='')
+  .single-grid
+    .panel.panel-default.single-grid-panel
+      .panel-body
+        .panel-children(ng-repeat='template in gridTemplate', tkg-template-url='template', ng-class="'panel-children-' + $index", single-grid-children='')

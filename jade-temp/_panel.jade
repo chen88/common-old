@@ -1,0 +1,22 @@
+block directive
+
+if directive
+  div.panel.panel-default.max&attributes(directive)
+    div.panel-heading
+      div.panel-title
+        block panel title
+        block title
+    div.panel-body
+      block panel body
+      block body
+    block extra
+else
+  div.panel.panel-default.max
+    div.panel-heading
+      div.panel-title
+        block panel title
+        block title
+    div.panel-body
+      block panel body
+      block body
+    block extra

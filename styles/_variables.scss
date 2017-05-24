@@ -1,0 +1,104 @@
+$table-border-color: #ddd !default;
+$table-border: 1px solid $table-border-color;
+$scrollable-cell-height: 20px;
+$scrollable-collapsed-height: 100px;
+$scollable-collapsed-add-height: 0;
+$scrollable-collpased-final-height: 100px;
+$ib: inline-block;
+
+$black: #333333;
+$originalGreen: #005902;
+$originalPoop: #C3A342;
+$green: #005902;
+$darkRed: #ad6b45;
+$poop: #C3A342;
+$lightPoop: lighten($originalPoop, 40%);
+$lighterPoop: lighten($lightPoop, 5%);
+$darkPoop: darken($poop, 5%);
+$equityGreen: #4f684a;
+$equityPoop: #d5cd92;
+$equityLightPoop: lighten($poop, 20%);
+$hoverGreen: rgba($green, 0.2);
+$hoverGreen: #CCDECC;
+$lighterHoverGreen: lighten($hoverGreen, 10%);
+$lighterHoverGreen: #ebf2eb;
+$selectGreen: rgba($green, 0.3);
+$inactiveGreen: lighten($green, 5%);
+$defaultBtnGreen: $inactiveGreen;
+// $btnGreen: $inactiveGreen;
+$btnGreen: #65865f;
+$btnHoverGreen: lighten($btnGreen, 8%);
+$btnActiveGreen: lighten($btnGreen, 12%);
+$lightgrey: #efefef;
+$lighterGrey: lighten(lightgrey, 15%);
+$grey: #e3e3e3;
+$darkGrey: #676767;
+$white: $lightgrey;
+$linkColor: #0000EE;
+$anchorColor: #23527c;
+$defaultBlue: $brand-info;
+$blueErrorColor: #1c32db;
+$blueColor: $blueErrorColor;
+$lightBlue: #E5E8FB;
+$darkerBlue: #c7cef7;
+$lighterBlue: #F0F2FF;
+$pink: #EF49FF;
+$lightPink: #FDEEFF;
+$greenSuccess: $brand-success;
+$redColor: $brand-danger;
+$brightRed: #FF6360;
+$yellowColor: $brand-warning;
+$pink: #f9d1eb;
+$cellPadding: 2px 5px !important;
+$panelBg: $panel-default-heading-bg;
+
+//btn
+$actionRed: $darkRed;
+$defaultBtnGreen: #5a7755;
+
+$headerHeight: 60px;
+$headerBannerWidth: 110px;
+$rangerBannerPadding: 30px;
+$borderWidth: 6px;
+$innerBorderWidth: $borderWidth/2 - 1;
+$borderWidth: 4px;
+$innerBorderWidth: $borderWidth;
+$borderRadius: 4px;
+$resizerWidth: 10px;
+$panelHeading: 38px;
+
+//z-index
+$resizeBarIndex: 10;
+$maximizedIndex: 12;
+$ajaxLoader: 11;
+$resizerIndex:  13;
+
+$modalWidth: 665px;
+$modalCol1: 101px;
+$modalCol2: 100px;
+$modalCol3: 110px;
+$modalCol4: 120px;
+$modalCol5: 95px;
+$modalCol6: 100px;
+
+$externalModalWidth: 80%;
+
+//Single Grid
+$panelChildrenHeight: 415px;
+
+//Horizontal Grid
+$panelChildrenWidth: 400px;
+$addOnTemplateHeight: 50%;
+
+//Highchart
+$chartBorderColor: #EBBA95;
+
+$responsiveInputMinWidth: 60px;
+$responsiveInputMaxWidth: 100px;
+$responsiveWidth: 8vw;
+
+$hideXS: 800px;
+$hideMD: 900px;
+$hideXL: 1080px;
+
+$modalZIndex: 1050;

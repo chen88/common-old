@@ -1,0 +1,172 @@
+@mixin modalSize {
+  .modal-dialog {
+    @content;
+  }
+}
+
+%modalCol1 {
+  min-width: $modalCol1;
+  max-width: $modalCol1 + 10px;
+}
+%modalCol2 {
+  min-width: $modalCol2;
+  max-width: $modalCol2 + 10px;
+}
+%modalCol3 {
+  min-width: $modalCol3;
+  max-width: $modalCol3 + 10px;
+}
+%modalCol4 {
+  min-width: $modalCol4;
+  max-width: $modalCol4 + 10px;
+}
+%modalCol5 {
+  min-width: $modalCol5;
+  max-width: $modalCol5 + 10px;
+}
+%modalCol6 {
+  min-width: $modalCol6;
+  max-width: $modalCol6 + 10px;
+}
+
+%modalColExtend1 {
+  max-width: $modalCol1 + 60px;
+}
+%modalColExtend2 {
+  max-width: $modalCol2 + 60px;
+}
+%modalColExtend3 {
+  max-width: $modalCol3 + 60px;
+}
+%modalColExtend4 {
+  max-width: $modalCol4 + 60px;
+}
+%modalColExtend5 {
+  max-width: $modalCol5 + 60px;
+}
+%modalColExtend6 {
+  max-width: $modalCol6 + 60px;
+}
+
+
+.modal-content {
+  @include golden-border(3px);
+  background-color: $green;
+  color: $lightgrey;
+
+  input {
+    color: black;
+  }
+  table:not(.default-table-width) {
+    tr{
+      @if variable-exists(modalRowHeight) {
+        height: $modalRowHeight;
+      }
+
+      // @for $i from 1 through 6 {
+      //   td:nth-child(#{$i}) {
+      //     @extend %modalCol#{$i};
+      //     & > * {
+      //       @extend %modalCol#{$i};
+      //     }
+      //     &.extend {
+      //       @extend %modalColExtend#{$i};
+      //       & > * {
+      //         @extend %modalColExtend#{$i};
+      //       }
+      //     }
+      //   }
+      // }
+      button.btn.btn-primary.dropdown-toggle {
+        width: 100px;
+      }
+    }
+  }
+
+  .dropdown-menu[uib-dropdown-menu] {
+    max-width: initial !important;
+    min-width: initial !important;
+    tr {
+      height: initial;
+
+      td {
+        max-width: initial !important;
+        min-width: initial !important;
+        & > * {
+          max-width: initial !important;
+          min-width: initial !important;
+        }
+      }
+
+      button.btn.btn-primary.dropdown-toggle {
+        width: initial;
+      }
+    }
+  }
+
+  tr {
+      td.date-selection, td.date-selection > * {
+      max-width: 140px;
+    }
+  }
+}
+
+.default-modal {
+  .modal-content {
+    background: white;;
+    color: $black;
+  }
+}
+
+.modal-dialog:not(.modal-sm):not(.modal-md):not(.modal-lg) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.modal-backdrop {
+  height: 100%;
+}
+
+.full-size-modal {
+
+  .modal-dialog {
+    height: 90%;
+  }
+
+  .modal-open .modal {
+    overflow: hidden;
+  }
+
+  .modal-content {
+    height: 100%;
+  }
+
+  .modal-body {
+    height: 87%;
+    overflow: auto;
+  }
+}
+
+.full-width-modal {
+  .modal-dialog {
+    width: 90%;
+  }
+}
+
+.modal-message {
+  .modal-content {
+    margin-top: 45%;
+  }
+}
+
+.modal-footer {
+  clear: both;
+}
+
+.fit-modal {
+  @extend .modal-message;
+  .modal-content {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,22 @@
+div#primary-body(primary-body class="three-grids")
+  div.primary-grid
+    div.primary-grid-child.secondary-body(secondary-body)
+      secondary-grid.secondary-grid(
+        position="top"
+        height="50%"
+        resize="true"
+        tkg-template-url="gridTemplate.top")
+      resize-bar(position="horizontal")
+      secondary-grid.secondary-grid(
+        position="bottom"
+        height="50%")
+        div.secondary-grid-child.secondary-grid-child(tiertary-body)
+          tiertary-grid.tiertary-grid(
+            position="left"
+            tkg-template-url="gridTemplate.bottomLeft")
+          resize-bar(position="vertical")
+          tiertary-grid.tiertary-grid(
+            position="right"
+            resize="true"
+            tkg-template-url="gridTemplate.bottomRight")
+

@@ -1,0 +1,54 @@
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  &.focus {
+    text-decoration: underline;
+    color: lighten($anchorColor, 30%);
+  }
+  &.white-text {
+    &:hover, &:focus {
+      color: $lightgrey;
+    }
+    &:active {
+      color: $grey;
+    }
+  }
+}
+
+abbr {
+  cursor: inherit !important;
+}
+
+label {
+  font-weight: normal;
+}
+
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.golden-border {
+  @include golden-border;
+}
+
+.golden-border-1 {
+  @include golden-border(1px);
+}
+
+.green-border {
+  @include green-border;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+:focus, :active:focus {
+  outline: none !important;
+}

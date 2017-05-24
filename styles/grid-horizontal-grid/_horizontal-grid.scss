@@ -1,0 +1,83 @@
+.horizontal-grid {
+  height: 100%;
+  width: 100%;
+  border: none;
+
+  .panel {
+    height: 100%;
+  }
+
+  .horizontal-grid-panel, .panel-body, .panel-children {
+    height: 100%;
+  }
+
+  .horizontal-grid-panel {
+    background: $poop;
+    border: none;
+    overflow-x: auto;
+    &.two-children {
+      overflow-x: hidden;
+    }
+    & > .panel-body {
+      width: 100%;
+    }
+  }
+
+  .panel-children {
+    width: $panelChildrenWidth;
+    position: relative;
+    float: left;
+    &:not(:last-child) {
+      padding-right: $innerBorderWidth;
+      border-bottom: 0;
+    }
+  }
+}
+
+.horizontal-grid-addon {
+  overflow: hidden;
+  // .horizontal-grid, .add-on-template {
+  //   transition: height 0.5s;
+  // }
+  .horizontal-grid {
+    height: 100%;
+  }
+  .add-on-template {
+    height: 0px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    // display: none;
+  }
+}
+
+// @if variable-exists(addOnTemplate) {
+  // .#{$addOnTemplate} {
+    .horizontal-grid-addon {
+      .horizontal-grid {
+        height: 100% - $addOnTemplateHeight;
+      }
+      .add-on-template {
+        height: $addOnTemplateHeight;
+        padding-bottom: $innerBorderWidth;
+      }
+      .add-on-template, .horizontal-grid {
+        display: block;
+      }
+    }
+  // }
+// }
+
+.resizing {
+  .horizontal-grid {
+    .horizontal-grid-panel {
+      overflow-x: hidden;
+    }
+  }
+}
+
+horizontal-grid {
+  .resize-bar {
+    margin-left: -($resizerWidth - $innerBorderWidth);
+  }
+}

@@ -1,0 +1,36 @@
+.resize-bar {
+  position: absolute;
+  z-index: $resizeBarIndex;
+  background-color: transparent;
+  &.vertical {
+    height: 100%;
+    width: $resizerWidth;
+    cursor: ew-resize;
+    &.moving {
+      width: $resizerWidth/2;
+    }
+  }
+
+  &.horizontal {
+    width: 100%;
+    height: $resizerWidth/2;
+    cursor: ns-resize;
+    &.moving {
+      height: $resizerWidth/2;
+    }
+  }
+
+  &.moving {
+    background-color: $poop;
+    opacity: 0.5;
+  }
+}
+
+.vertical-grid {
+  .resize-bar.horizontal {
+    bottom: -($borderWidth - 1);
+    // &.moving {
+    //   position: fixed;
+    // }
+  }
+}

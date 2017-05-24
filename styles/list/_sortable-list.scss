@@ -1,0 +1,95 @@
+.sortable-list {
+  margin: 0;
+  padding: 10px;
+  li {
+    position: relative;
+    margin-bottom: 5px;
+    // padding: 10px 5px;
+    text-align: center;
+    list-style: none;
+    // border: 1px solid $green;
+    // border-radius: $borderRadius;
+    // transition: background-color 1s ease-out;
+    // overflow: hidden;
+    .fa-long-arrow-up, .fa-long-arrow-down {
+      // float: left;
+      padding: 0 5px;
+      border: 2px dotted transparent;
+      transition: font-size 0.5s ease-out;
+      &:hover {
+        border: 2px dotted $btnHoverGreen;
+        border-radius: 15px;
+        font-size: 1.2em;
+      }
+    }
+
+    .fa-long-arrow-up {
+      padding-bottom: 2px;
+    }
+
+    .fa-long-arrow-down {
+      padding-top: 2px;
+    }
+
+    .sorting-arrows {
+      position: absolute;
+      left: 5px;
+      // float: left;
+      z-index: 2;
+    }
+
+    .content {
+      position: absolute;
+      left: 10px;
+      // left: 45px;
+    }
+
+    // @include addGreenAction("true");
+
+    .fa-refresh {
+      transform: rotate(90deg);
+      height: 8px;
+      display: inline-block;
+      overflow: hidden;
+      color: $black;
+    }
+
+    .curved-arrow-down {
+      display: inline-block;
+      // padding-left: 15px;
+      width: 20px;
+      height: 30px;
+      position: absolute;
+      right: -15px;
+      cursor: pointer;
+      font-size: 22px;
+      margin-top: -5px;
+
+      &:hover {
+        .fa-refresh {
+          color: $poop;
+        }
+      }
+    }
+
+    .fa-copy {
+      margin-top: 7px;
+    }
+
+    .btn-bordered {
+      @include addGreenAction("true");
+      float: left;
+      width: 85%;
+    }
+
+    .curved-arrow-up {
+      @extend .curved-arrow-down;
+      margin-top: -4px;
+      left: -25px;
+      .fa-refresh {
+        transform: rotate(270deg);
+      }
+    }
+
+  }
+}

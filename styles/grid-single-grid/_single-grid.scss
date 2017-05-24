@@ -1,0 +1,86 @@
+.single-grid {
+  height: 100%;
+  // border: 1px solid #ddd;
+  border-radius: $borderRadius;
+
+  .primary-grid-child {
+    padding: $borderWidth - 1;
+  }
+
+  .single-grid-panel {
+    overflow-y: auto;
+    height: 100%;
+    border: none;
+    background-color: $poop;
+    // background-color: white;
+    z-index: 2;
+  }
+
+  .panel-children {
+    // @include transition(height, 0.5s);
+    height: $panelChildrenHeight;
+    background-color: $poop;
+    &:not(:last-child) {
+      // padding-bottom: $borderWidth/2;
+      border-bottom: $borderWidth - 1 solid $poop;
+    }
+
+    &.grid-collapsed {
+      overflow-y: hidden;
+      height: $panelHeading + 4px !important;
+    }
+
+    &.grid-collapsed-add {
+
+    }
+
+    // &.grid-collapsed-add-active {
+    //   overflow-y: hidden;
+    // }
+
+    &.grid-collapsed-remove {
+
+    }
+
+    &.grid-collapsed-remove-active {
+      overflow-y: hidden;
+    }
+
+    &.maximized {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      min-height: 100%;
+      z-index: 2;
+    }
+
+    // & > .panel {
+    //   border: none;
+    //   border-radius: 0;
+    // }
+
+    .tiertary-body {
+      background-color: $poop;
+    }
+  }
+
+  .tiertary-grid {
+    height: $panelChildrenHeight - $borderWidth/2 !important;
+
+    &[position="right"] {
+      border-left: $borderWidth/2 solid $poop;
+    }
+
+    // & > .panel {
+    //   border: none;
+    //   border-radius: 0;
+    // }
+  }
+
+  .panel-body-grid {
+    height: $panelChildrenHeight - $panelHeading;
+    padding: 10px;
+  }
+
+
+}

@@ -1,0 +1,15 @@
+.secondary-grid {
+  position: absolute;
+}
+
+.secondary-grid-child {
+  height: 100%;
+
+  &.secondary-top {
+    padding-bottom: $borderWidth - 2;
+  }
+
+  &.secondary-bottom {
+    padding-top: $borderWidth/2 - 1;
+  }
+}

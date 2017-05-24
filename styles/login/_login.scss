@@ -1,0 +1,90 @@
+#login #primary-body {
+  position: fixed;
+  height: 100%;
+
+  .panel {
+    width: 33%;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 200px;
+    box-shadow: 0px 0px 5px 5px #777;
+  }
+
+
+  @media screen and (max-width: 1000px) {
+    .panel {
+      margin-top: 25%;
+    }
+  }
+
+  @media screen and (max-height: 450px) {
+    .panel {
+      margin-top: 100px;
+    }
+  }
+
+
+  .panel-body {
+    padding: 10px;
+  }
+
+  .panel-heading {
+    height: auto;
+    padding: 5px 10px;
+  }
+
+  .panel-title {
+    font-size: 14px;
+  }
+
+  input, button {
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 6px !important;
+  }
+
+  input {
+    background-color: lighten($lightgrey, 4%);
+    width: 100%;
+    float: none;
+  }
+
+  button {
+    height: 24px;
+  }
+
+  .alert {
+    // width: 33%;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    display: inline-block;
+    // width: 100%;
+  }
+  .alert-wrapper {
+     margin: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer {
+    position: absolute;
+    display: block;
+    padding: 10px;
+    background-color: $green;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    bottom: 50px;
+    a {
+      color: #c7cef7;
+    }
+  }
+}
+

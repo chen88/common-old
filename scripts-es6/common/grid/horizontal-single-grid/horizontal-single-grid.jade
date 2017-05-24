@@ -1,0 +1,7 @@
+#primary-body(primary-body='')
+  .secondary-body.primary-grid-child
+    .horizontal-grid
+      .panel.panel-default.horizontal-grid-panel
+        .panel-body(horizontal-grid-body='')
+          .panel-children(ng-repeat='t in hGridTemplate', tkg-template-url='t.template || t', max-width='{{::t.width}}', is-fixed='{{::t.width ? true: false}}', ng-class="'panel-children-' + $index", horizontal-grid-children='')
+            resize-bar(ng-if='!$first && !disableResizer', position='vertical', current-element='.panel-children-{{$index-1}}', adjust-current='true')

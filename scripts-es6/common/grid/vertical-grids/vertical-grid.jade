@@ -1,0 +1,13 @@
+- var vm = "vGridCtrl";
+#primary-body(primary-body)
+  .primary-grid-child
+    .vertical-grid
+      .panel.panel-default.vertical-grid-panel
+        .panel-body
+          .panel-children.v-grid-children(
+            ng-repeat="t in ::#{vm}.templates"
+            tkg-template-url="t.template"
+            v-grid-children
+            ng-class="{'grid-collapsed': t.collapsed, maximized: currentVGridChild.tmpl.maximized, last: t.isLast}"
+            ng-hide="t.height === 0")
+            grid-vertical-resizer(ng-if="::(!$last && !#{vm}.disableResizer)" ng-hide="t.collapsed || currentVGridChild.tmpl.maximized || t.isLast")

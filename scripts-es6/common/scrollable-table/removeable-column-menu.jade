@@ -1,0 +1,9 @@
+- var vm = "tableCtrl";
+ul#context-menu.dropdown-menu.ib(ng-click="$event.stopPropagation();$event.preventDefault()")
+  li(ng-click="#{vm}.removeColumn()")
+    a Remove
+  li
+    hr.vert-spacing-xs
+  li(ng-repeat="col in #{vm}.removeableColumns" ng-click="#{vm}.toggleColumn(col)")
+    a {{col.name}}
+      i.pull-right.fa(ng-class="{'fa-toggle-on': !col.unchecked, 'fa-toggle-off': col.unchecked}")

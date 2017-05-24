@@ -1,0 +1,25 @@
+.scrollable-table {
+  table {
+    tbody {
+      tr:nth-child(odd), tr:nth-child(even) {
+        background: inherit;
+      }
+      tr {
+        height: initial;
+        &:hover {
+          background-color: inherit !important;
+        }
+      }
+    }
+    th, td {
+      line-height: 1.5 !important;
+    }
+    td:first-child, th:first-child {
+      padding-left: 0 !important;
+    }
+
+    td:last-child, th:last-child {
+      padding-right: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+- var vm = "cusipAutoFillCtrl";
+div(uib-dropdown)
+  .input-group-addon
+    span.glyphicon.glyphicon-th-list(uib-dropdown-toggle)
+  ul.hint-list(uib-dropdown-menu)
+    li.block.relative(ng-repeat='pricing in #{vm}.cusipRecords | limitTo: 20', ng-click='#{vm}.setModel(pricing.cusip)')
+      a
+        span {{pricing.cusip + ' - ' + pricing.issuer}}

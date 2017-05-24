@@ -1,0 +1,11 @@
+.horizontal-grid
+  .panel.panel-default.horizontal-grid-panel
+    .panel-body(horizontal-grid-body)
+      .panel-children.h-grid-children(
+        ng-repeat="t in ::hGridTemplate"
+        tkg-template-url="t.template || t"
+        max-width="{{::t.width}}"
+        is-fixed="{{::t.width ? true: false}}"
+        horizontal-grid-children
+        ng-class="::('panel-children-' + $index)")
+        resize-bar(ng-if="::(!$first && !disableResizer)" position="vertical" current-element=".panel-children-{{$index-1}}" adjust-current="true")

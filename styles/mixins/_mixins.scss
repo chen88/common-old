@@ -1,0 +1,145 @@
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin pretty-textoverflow() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin linear-grad ($startColor, $endColor, $direction: top) {
+  $endDirection: $direction;
+  @if $direction == top {
+    $endDirection: bottom;
+  } @else if $direction == bottom {
+    $endDirection: top;
+  } @else if $direction == left {
+    $endDirection: right;
+  } @else {
+    $endDirection: left;
+  }
+  background: -webkit-linear-gradient($direction, $startColor , $endColor); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($endDirection, $startColor, $endColor); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($endDirection, $startColor, $endColor); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to $endDirection, $startColor , $endColor); /* Standard syntax */
+}
+
+@mixin border ($borderColor: $poop, $borderWidth: 6px) {
+  border: $borderWidth solid $borderColor;
+}
+
+@mixin golden-border ($borderWidth: 6px) {
+  @include border($poop, $borderWidth);
+  // border: $borderWidth solid $poop;
+}
+
+@mixin green-border ($borderWidth: 6px) {
+  @include border($green, $borderWidth);
+  // border: $borderWidth solid $poop;
+}
+
+@mixin dropdown-li {
+  height: 21px;
+  margin-bottom: 5px;
+}
+
+@mixin transition ($property: all, $duration: 1s, $timing: ease) {
+  -webkit-transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -webkit-transition-timing-function: $timing;
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+}
+
+@mixin radial ($color1, $color2, $color3, $color4) {
+  background: -webkit-radial-gradient($color1, $color2, $color3, $color4); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient($color1, $color2, $color3, $color4); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient($color1, $color2, $color3, $color4); /* For Firefox 3.6 to 15 */
+  background: radial-gradient($color1, $color2, $color3, $color4); /* Standard syntax */
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation ($anitmation-name, $duration, $timing: linear, $count: infinite, $direction: normal, $delay: 0s) {
+  -webkit-animation: $anitmation-name $duration $timing $delay $count $direction; /* Chrome, Safari, Opera */
+  animation: $anitmation-name $duration $timing $delay $count $direction; /* Standard syntax */
+}
+
+@mixin no-animation () {
+  -webkit-animation: none;
+  animation: none;
+}
+@mixin transform ($property) {
+  -ms-transform: $property; /* IE 9 */
+  -webkit-transform: $property; /* Chrome, Safari, Opera */
+  transform: $property;
+
+}
+
+@mixin maxWidth ($maxWidth) {
+  @media screen and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+@mixin minWidth ($minWidth) {
+  @media screen and (min-width: $minWidth + 1) {
+    @content;
+  }
+}
+
+
+@mixin hideBanner ($maxWidth) {
+  @include maxWidth($maxWidth) {
+    #tkg-header {
+      #tkg-banner {
+        display: none;
+      }
+      form {
+        left: 0;
+      }
+    }
+  }
+}
+
+@mixin addGreenAction ($lightColor: "false") {
+  @if $lightColor == "false" {
+    &:hover, &:focus {
+      background: $btnHoverGreen;
+      color: white;
+    }
+    &:active, &:hover:active {
+      background: $btnActiveGreen;
+      color: white;
+    }
+  } @else {
+    &:hover, &:focus {
+      background: $hoverGreen;
+    }
+    &:active, &:hover:active {
+      background: darken($hoverGreen, 5%);
+    }
+    &.selected {
+      background-color: $btnActiveGreen;
+      color: white;
+      .fa-toggle-off, .fa-toggle-on {
+        color: white;
+      }
+    }
+  }
+}

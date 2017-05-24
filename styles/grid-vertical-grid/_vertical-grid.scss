@@ -1,0 +1,43 @@
+.vertical-grid {
+  height: 100%;
+  // border: 1px solid #ddd;
+  border-radius: $borderRadius;
+
+  .vertical-grid-panel {
+    overflow-y: auto;
+    height: 100%;
+    border: none;
+    background-color: $poop;
+    // background-color: white;
+    z-index: 2;
+
+    & > .panel-body {
+      height: 100%;
+    }
+  }
+
+  .v-grid-children {
+    position: relative;
+    height: $panelChildrenHeight;
+    background-color: $poop;
+    &:not(:last-child):not(.last) {
+      border-bottom: $borderWidth - 1 solid $poop;
+    }
+
+    &.grid-collapsed {
+      overflow-y: hidden;
+      height: $panelHeading + 4px !important;
+    }
+
+    &.maximized {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      min-height: 100%;
+      z-index: 10;
+    }
+  }
+  v-grid-maximizer {
+    float: right;
+  }
+}

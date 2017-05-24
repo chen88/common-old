@@ -1,0 +1,5 @@
+#sticky-header(tkg-header-user ng-show="user")
+  strong {{getUserName()}} |
+  a.left-spacing-xs(ng-click="changePw()") Change Password |
+  ng-transclude
+  a.left-spacing-xs(ng-click="logout()") Logout

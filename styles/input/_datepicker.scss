@@ -1,0 +1,94 @@
+[uib-datepicker-popup-wrap], .uib-datepicker {
+  background-color: $green !important;
+  .uib-datepicker-popup {
+    border: 1px solid white;
+    padding: 5px 10px;
+    z-index: $zindex-dropdown + 1;
+  }
+  button:not([disabled]) span {
+    color: $lightgrey;
+  }
+  button[disabled] span {
+    color: #ada5a5;
+  }
+  th, td {
+    padding: 2px 4px !important;
+    font-size: 13px;
+  }
+  button.btn.btn-default {
+    border: none;
+    padding: 0 !important;
+    font-size: 13px;
+    &:hover:not(.active) {
+      background-color: lighten($green, 10%) !important;
+      * {
+        background-color: lighten($green, 10%) !important;
+      }
+    }
+  }
+  *:not(.text-muted) {
+    background-color: $green !important;
+    color: $lightgrey;
+    outline: 0;
+    &.active, &.active * {
+      background-color: $poop !important;
+      color: $black;
+      &:hover {
+        background-color: lighten($poop, 10%) !important;
+      }
+    }
+  }
+}
+
+.default-datepicker {
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: $borderRadius;
+  display: inline-block;
+}
+
+.uib-timepicker {
+  display: inline-block;
+  margin: 0 10px;
+  margin-bottom: -20px;
+
+  td {
+    margin: 0;
+    padding: 0 !important;
+    input {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .form-group {
+      margin: 0 !important;;
+    }
+    a {
+      // padding: 0;
+      width: 100%;
+      padding: 0 !important;
+      // height: 10px;
+    }
+    button {
+      margin-left: 10px;
+    }
+  }
+  tbody {
+    tr:first-child, tr:last-child {
+      height: 10px;
+      & > * {
+        min-height: 0px !important;
+        max-height: 10px;
+      }
+    }
+    tr:nth-child(2) {
+      td:nth-child(2) {
+        color: white;
+        padding-left: 5px !important;
+      }
+    }
+  }
+}
+
+.datepicker-input {
+  background-color: $hoverGreen !important;
+}

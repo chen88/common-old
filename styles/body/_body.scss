@@ -1,0 +1,25 @@
+body.resizing, body.dragging {
+  @include no-select;
+  &.ew {
+    cursor: ew-resize;
+  }
+}
+
+#primary-body {
+  position: relative;
+  // top: $headerHeight;
+  width: 100%;
+  background-color: $poop;
+}
+
+.secondary-body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.tiertary-body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

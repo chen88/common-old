@@ -1,0 +1,9 @@
+span.tkg-pagination(ng-class="::{'margin-right-none': hideCount}")
+  span(ng-class="::{'right-spacing': !hideCount || withPageNav}")
+    i.glyphicon.glyphicon-fast-backward(ng-click="nav('fast backward')")
+    i.glyphicon.glyphicon-backward(ng-click="nav('backward')")
+    span.h-spacing-xs {{currentPage | number}}/{{totalPages | number}}
+    i.glyphicon.glyphicon-forward(ng-click="nav('forward')")
+    i.glyphicon.glyphicon-fast-forward(ng-click="nav('fast forward')")
+  input.pull-none.sm.ib.form-control(ng-if='::withPageNav', type='number', ng-model='track.page', ng-change='toPage()', ng-model-options="{debounce: {'default': 500, 'blur': 0}}")
+  span.description(ng-if='::!hideCount') ({{(totalItem | number) + ' ' + name}})
