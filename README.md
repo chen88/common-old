@@ -1,6 +1,5 @@
 ## Install
 
-- Save ([`postInstall.js`](https://git.tkginternal.com/commons/web/blob/develop/postInstall.js)) to the root directory of the new project
 - Add the following script to `package.json`
 
 	```
@@ -58,23 +57,6 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
 });
 ```
 
-
-```
-npm install
-```
-This will list all the dependencies in `tkg_dependencies.json` in the `src-common/config` of the project, you can add to it, following the naming provided in `src-common/gulp_conf.js`
-
-```
-[
-  {name: 'common', task: 'concatCommon'},
-  {name: 'sniper', task: 'concatSniper'},
-  {name: 'ranger', task: 'concatRanger'},
-  {name: 'g18', task: 'concatG18'},
-  {name: 'scout', task: 'concatScout'},
-  {name: 'sentinel', task: 'concatSentinel'},
-]
-```
-
 #### Structural Yield
 ```
 root/
@@ -111,30 +93,4 @@ root/
 |   |-- src/
 |-- web-dist/
 |   |-- Deployment Files //same as dist folder with additional mercurial setting to deploy
-```
-
-#### Running the app
-```
-gulp serve
-```
-
-#### Building the app
-```
-gulp build
-```
-
-
-#### Deploy to web-dist (Deprecated)
-```
-gulp deploy
-```
-
-## Docker Set up
-In `package.json`, add the following
-
-```
-{
-  "buildVersion": "2.2.0.RELEASE",
-  "deployTo": "docker.tkginternal.com/scout/web"
-}
 ```
